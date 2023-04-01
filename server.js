@@ -38,7 +38,7 @@ app.get("/app/rpsls", (req, res, next) => {
 
 // READ (HTTP method GET) at root endpoint /app/rps
 app.get("/app/rps/play", (req, res, next) => {
-    res.json(rpsls(req.query.shot));
+    res.json(rps(req.query.shot));
 	res.status(200);
 });
 
