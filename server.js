@@ -36,9 +36,16 @@ app.get("/app/rpsls", (req, res, next) => {
 	res.status(200);
 });
 
+// READ (HTTP method GET) at root endpoint /app/rps
+app.get("/app/rps/play", (req, res, next) => {
+    res.json(rpsls(req.query.shot));
+	res.status(200);
+});
+
+
 // READ (HTTP method GET) at root endpoint /app/rpsls
 app.get("/app/rpsls/play", (req, res, next) => {
-    res.json(rpsls());
+    res.json(rpsls(req.query.shot));
 	res.status(200);
 });
 
