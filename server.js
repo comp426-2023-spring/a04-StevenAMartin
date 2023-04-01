@@ -20,27 +20,25 @@ const server = app.listen(HTTP_PORT, () => {
 
 // READ (HTTP method GET) at root endpoint /app/
 app.get("/app/", (req, res, next) => {
-    res.json({"message":"Your API works! (200)"});
+    res.json({"message":"200 OK"});
 	res.status(200);
 });
 
 // READ (HTTP method GET) at root endpoint /app/rps
 app.get("/app/rps", (req, res, next) => {
-    let result = JSON.stringify(rps())
-    res.json({result});
+    res.json(rps());
 	res.status(200);
 });
 
 // READ (HTTP method GET) at root endpoint /app/rpsls
 app.get("/app/rpsls", (req, res, next) => {
-    let result = JSON.stringify(rpsls())
-    res.json({result});
+    res.json(rpsls());
 	res.status(200);
 });
 
 
 // Default response for any other request
 app.use(function(req, res){
-	res.json({"message":"Endpoint not found. (404)"});
+	res.json({"message":"404 NOT FOUND"});
     res.status(404);
 });
