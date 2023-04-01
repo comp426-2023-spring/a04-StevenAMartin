@@ -8,8 +8,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "nodemon server.js --port=6000",
-    "start": "node server.js"
+    "test": "node server.js --port=5555",
+    "start": "nodemon server.js --port=6000"
   },
   "repository": {
     "type": "git",

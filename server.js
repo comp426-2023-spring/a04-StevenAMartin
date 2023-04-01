@@ -36,6 +36,12 @@ app.get("/app/rpsls", (req, res, next) => {
 	res.status(200);
 });
 
+// READ (HTTP method GET) at root endpoint /app/rpsls
+app.get("/app/rpsls/play", (req, res, next) => {
+    res.json(rpsls());
+	res.status(200);
+});
+
 
 // Default response for any other request
 app.use(function(req, res){
