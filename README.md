@@ -187,7 +187,7 @@ The response should look like this:
 #### Play RPSLS against an opponent (parameter endpoint)
 
 ```
-PORT="$(shuf -i 2000-65535 -n 1)"; SHOT="$(shuf -n1 -e rock paper scissors lizard spock)"; (timeout --signal=SIGINT 5 node server.js --port=$PORT; exit 0) & sleep 1s && curl -s http://localhost:${PORT}/app/rpsls/play/${SHOT}/ && sleep 5s
+PORT="$(shuf -i 2000-65535 -n 1)"; SHOT="$(shuf -n1 -e rock paper scissors lizard spock)"; (timeout --signal=SIGINT 5 node server.js --port=$PORT; exit 0) & sleep 1 && curl -s http://localhost:${PORT}/app/rpsls/play/${SHOT}/ && sleep 2
 ```
 
 > This calls `/app/rpsls/play/(rock|paper|scissors|lizard|spock)/` with no request body. 

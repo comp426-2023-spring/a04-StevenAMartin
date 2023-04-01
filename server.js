@@ -36,16 +36,43 @@ app.get("/app/rpsls", (req, res, next) => {
 	res.status(200);
 });
 
-// READ (HTTP method GET) at root endpoint /app/rps
+// READ (HTTP method GET) at root endpoint /app/rps/play
 app.get("/app/rps/play", (req, res, next) => {
     res.json(rps(req.query.shot));
 	res.status(200);
 });
 
 
-// READ (HTTP method GET) at root endpoint /app/rpsls
+// READ (HTTP method GET) at root endpoint /app/rpsls/play
 app.get("/app/rpsls/play", (req, res, next) => {
     res.json(rpsls(req.query.shot));
+	res.status(200);
+});
+
+
+// READ (HTTP method POST) at root endpoint /app/rps/play
+app.post("/app/rps/play", (req, res, next) => {
+    res.json(rps(req.body.shot));
+	res.status(200);
+});
+
+
+// READ (HTTP method POST) at root endpoint /app/rpsls/play
+app.post("/app/rpsls/play", (req, res, next) => {
+    res.json(rpsls(req.body.shot));
+	res.status(200);
+});
+
+// READ (HTTP method GET) at /app/rps/play + parameter endpoint
+app.get("/app/rps/play/:shot", (req, res, next) => {
+    res.json(rps(req.params['shot']));
+	res.status(200);
+});
+
+
+// READ (HTTP method GET) at /app/rps/play + parameter endpoint
+app.get("/app/rpsls/play/:shot", (req, res, next) => {
+    res.json(rpsls(req.params.shot));
 	res.status(200);
 });
 
